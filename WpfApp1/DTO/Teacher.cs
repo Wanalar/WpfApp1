@@ -7,7 +7,8 @@ using WpfApp1.Tools;
 
 namespace WpfApp1.DTO
 {
-    internal class Teacher
+    [Table("teacher")]
+   public class Teacher : BaseDTO
     {
         [Column("Name")]
         public string Name { get; set; }

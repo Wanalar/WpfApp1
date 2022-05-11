@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using WpfApp1.Tools;
 
 namespace WpfApp1.DTO
+    
 {
-    internal class Academic_plan
+    [Table("academic_plan")]
+   public class Academic_plan : BaseDTO 
     {
         [Column("Number of hours")]
         public int Number_of_hours { get; set; }

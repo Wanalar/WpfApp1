@@ -21,7 +21,7 @@ namespace WpfApp1.DTO
 
         [Column("Patronymic")]
         public string Patronymic { get; set; }
+
         
-       
     }
 }

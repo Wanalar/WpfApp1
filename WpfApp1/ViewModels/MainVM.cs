@@ -9,10 +9,44 @@ using WpfApp1.Tools;
 
 namespace WpfApp1.ViewModels
 {
-    CurrentPageControl currentPageControl;
-
-    public Page CurrentPage
+    class MainVM : BaseVM
     {
-        get => currentPageControl.Page;
+        CurrentPageControl currentPageControl;
+
+        public Page CurrentPage
+        {
+            get => currentPageControl.Page;
+        }
+        
+        public CommandVM CreateWork{ get; set; }
+        public CommandVM ViewWork{ get; set; }
+        public CommandVM CreateAcademic_plan{ get; set; }
+        public CommandVM ViewAcademic_plan { get; set; }
+        public CommandVM DownloudPage  { get; set; }
+        public MainVM()
+        {
+            currentPageControl = new CurrentPageControl();
+            currentPageControl.PageChanged += CurrentPageControl_PageChanged;
+            currentPageControl.SetPage(new GenerateXlsxPage());
+            CreateWork = new CommandVM(() => {
+                currentPageControl.SetPage(new EditWorkPage(new EditWorkVM(currentPageControl)));
+            });
+            ViewWork = new CommandVM(() => {
+                currentPageControl.SetPage(new ViewWorksPage());
+            });
+            CreateAcademic_plan = new CommandVM(() => {
+                currentPageControl.SetPage(new EditAcademic_planPage(new EditAcademic_planVM(currentPageControl)));
+            });
+            ViewAcademic_plan = new CommandVM(() => {
+                currentPageControl.SetPage(new ViewAcademic_plansPage());
+            });
+
+
+
+        }
+        private void CurrentPageControl_PageChanged(object sender, EventArgs e)
+        {
+            Signal(nameof(CurrentPage));
+        }
     }
 }

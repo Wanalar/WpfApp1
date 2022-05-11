@@ -7,12 +7,13 @@ using WpfApp1.Tools;
 
 namespace WpfApp1.DTO
 {
-    internal class Work
+    [Table("work")]
+    public class Work : BaseDTO
     {
         [Column("Student")]
-        public string Student { get; set; }
+        public int Student { get; set; }
         [Column("Discipline")]
-        public string Discipline { get; set; }
+        public int Discipline { get; set; }
         [Column("Grade")]
         public int Grade { get; set; }
 
