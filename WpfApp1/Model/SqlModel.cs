@@ -20,7 +20,6 @@ namespace WpfApp1.Model
                 sqlModel = new SqlModel();
             return sqlModel;
         }
-       
 
 
 
@@ -32,7 +31,49 @@ namespace WpfApp1.Model
 
 
 
+        public int Insert<T>(T value)
+        {
+            string table;
+            List<Meta> values;
+            GetMetaData(value, out table, out values);
+            var query = CreateInsertQuery(table, values);
+            var db = MySqlDB.GetDB();
+            // лучше эти 2 запроса объединить в один с помощью транзакции
+            int id = db.GetNextID(table);
+            db.ExecuteNonQuery(query.Item1, query.Item2);
+            return id;
+        }
+        // обновляет объект в бд по его id
+        public void Update<T>(T value) where T : BaseDTO
+        {
+            string table;
+            List<Meta> values;
+            GetMetaData(value, out table, out values);
+            var query = CreateUpdateQuery(table, values, value.ID);
+            var db = MySqlDB.GetDB();
+            db.ExecuteNonQuery(query.Item1, query.Item2);
+        }
 
+        public void Delete<T>(T value) where T : BaseDTO
+        {
+            var type = value.GetType();
+            string table = GetTableName(type);
+            var db = MySqlDB.GetDB();
+            string query = $"delete from `{table}` where id = {value.ID}";
+            db.ExecuteNonQuery(query);
+        }
+
+        public int GetNumRows(Type type)
+        {
+            string table = GetTableName(type);
+            return MySqlDB.GetDB().GetRowsCount(table);
+        }
+
+        private static string GetTableName(Type type)
+        {
+            var tableAtrributes = type.GetCustomAttributes(typeof(TableAttribute), false);
+            return ((TableAttribute)tableAtrributes.First()).Table;
+        }
 
 
 

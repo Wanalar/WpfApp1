@@ -32,13 +32,13 @@ namespace WpfApp1.ViewModels
                 currentPageControl.SetPage(new EditWorkPage(new EditWorkVM(currentPageControl)));
             });
             ViewWork = new CommandVM(() => {
-                currentPageControl.SetPage(new ViewWorksPage());
+                currentPageControl.SetPage(new ViewWorksVM());
             });
             CreateAcademic_plan = new CommandVM(() => {
                 currentPageControl.SetPage(new EditAcademic_planPage(new EditAcademic_planVM(currentPageControl)));
             });
             ViewAcademic_plan = new CommandVM(() => {
-                currentPageControl.SetPage(new ViewAcademic_plansPage());
+                currentPageControl.SetPage(new ViewAcademic_plansVM());
             });
 
 

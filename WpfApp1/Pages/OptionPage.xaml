@@ -18,7 +18,7 @@
         <PasswordBox x:Name="passwordBox"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Тест связи" Command="{Binding TestConnection}"/>
-            <Button Content="Сохранить" Command="{Binding SaveSettings}"/>
+            <Button Content="Сохранить" Command="{Binding SaveSetting}"/>
         </StackPanel>
     </StackPanel>
 </Page>
