@@ -9,9 +9,10 @@ using WpfApp1.Tools;
 
 namespace WpfApp1.ViewModels
 {
-     class SettingVM
+     class Connection
     {
         PasswordBox passwordBox;
+        private readonly CurrentPageControl currentPageControl;
 
         public string Server { get; set; }
         public string User { get; set; }
@@ -20,10 +21,10 @@ namespace WpfApp1.ViewModels
         public CommandVM TestConnection { get; set; }
         public CommandVM SaveSettings { get; set; }
 
-        public SettingVM(PasswordBox passwordBox)
+        public Connection(PasswordBox passwordBox, CurrentPageControl currentPageControl)
         {
             this.passwordBox = passwordBox;
-
+            this.currentPageControl = currentPageControl;
             Server = Properties.Settings.Default.server;
             User = Properties.Settings.Default.user;
             DB = Properties.Settings.Default.db;

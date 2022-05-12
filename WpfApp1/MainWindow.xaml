@@ -16,15 +16,17 @@
             <MenuItem Header="Меню">
                
                     <MenuItem Header="Академический план">
-                        <MenuItem Header="Создать группу" Command="{Binding CreateGroup}"/>
-                    <MenuItem Header="Список групп" Command="{Binding ViewAcademic_plans}"/>
+                    <MenuItem Header="Создать Учебный план" Command="{Binding CreateAcademic_plan}"/>
+                    <MenuItem Header="Список Учебных планов" Command="{Binding ViewAcademic_plans}"/>
                     </MenuItem>
                     <MenuItem Header="Работы">
-                        <MenuItem Header="Создать группу" Command="{Binding CreateGroup}"/>
-                    <MenuItem Header="Список групп" Command="{Binding ViewWorks}"/>
+                    <MenuItem Header="Создать Работу" Command="{Binding CreateWork}"/>
+                    <MenuItem Header="Список работ" Command="{Binding ViewWorks}"/>
                     </MenuItem>
 
-                
+                <MenuItem Header="Соединение" Command="{Binding Connection}"/>
+
+
             </MenuItem>
         </Menu>
         <Frame Content="{Binding CurrentPage}" Grid.Row="1" NavigationUIVisibility="Hidden"/>

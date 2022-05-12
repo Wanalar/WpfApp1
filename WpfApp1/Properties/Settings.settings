@@ -12,7 +12,7 @@
       <Value Profile="(Default)">mydb</Value>
     </Setting>
     <Setting Name="pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">root</Value>
     </Setting>
   </Settings>
 </SettingsFile>

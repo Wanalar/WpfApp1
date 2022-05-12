@@ -12,17 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для Option.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Option : Page
     {
-        public Page1()
+        public Option(Tools.CurrentPageControl currentPageControl)
         {
             InitializeComponent();
+            DataContext = new Connection(passwordBox, currentPageControl);
         }
     }
 }
