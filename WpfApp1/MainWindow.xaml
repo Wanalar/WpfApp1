@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1" xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainVM}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="500">
+        Title="Учёт курсовых и дипломных работ" Height="400" Width="500">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -14,20 +14,20 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="Меню">
-               
-                    <MenuItem Header="Академический план">
-                    <MenuItem Header="Создать Учебный план" Command="{Binding CreateAcademic_plan}"/>
-                    <MenuItem Header="Список Учебных планов" Command="{Binding ViewAcademic_plans}"/>
-                    </MenuItem>
-                    <MenuItem Header="Работы">
-                    <MenuItem Header="Создать Работу" Command="{Binding CreateWork}"/>
+
+                <MenuItem Header="Работы">
+                    <MenuItem Header="Создать работу" Command="{Binding CreateWork}"/>
                     <MenuItem Header="Список работ" Command="{Binding ViewWorks}"/>
-                    </MenuItem>
-
-                <MenuItem Header="Соединение" Command="{Binding Connection}"/>
-
-
+                </MenuItem>
+                <MenuItem Header="Файлы">
+                <MenuItem Header="Добавление файлов работ" Command="{Binding AddFille}"/>
+                <MenuItem Header="Скачивание файла работы " Command="{Binding DownloudFille}"/>
             </MenuItem>
+
+            <MenuItem Header="Соединение" Command="{Binding Connection}"/>
+            </MenuItem>
+
+            
         </Menu>
         <Frame Content="{Binding CurrentPage}" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>

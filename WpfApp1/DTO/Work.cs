@@ -12,13 +12,15 @@ namespace WpfApp1.DTO
     {
         [Column("Student")]
         public int Student { get; set; }
+
         [Column("Discipline")]
         public int Discipline { get; set; }
+
         [Column("Grade")]
         public int Grade { get; set; }
 
         [Column("Diploma and/or Coursework")]
-        public string Diploma_or_Coursework { get; set; } 
+        public string Diploma_or_Cursework { get; set; } 
         
     }
 }

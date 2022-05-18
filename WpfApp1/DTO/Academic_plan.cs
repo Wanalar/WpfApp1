@@ -9,7 +9,7 @@ namespace WpfApp1.DTO
     
 {
     [Table("academic_plan")]
-   public class Academic_plan : BaseDTO 
+   public class Academic_plan :  BaseDTO
     {
         [Column("Number of hours")]
         public int Number_of_hours { get; set; }

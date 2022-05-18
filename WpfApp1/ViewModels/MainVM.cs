@@ -20,8 +20,6 @@ namespace WpfApp1.ViewModels
         
         public CommandVM CreateWork{ get; set; }
         public CommandVM ViewWork{ get; set; }
-        public CommandVM CreateAcademic_plan{ get; set; }
-        public CommandVM ViewAcademic_plan { get; set; }
         public CommandVM DownloudPage  { get; set; }
 
         public CommandVM Connection { get; set; }
@@ -33,16 +31,11 @@ namespace WpfApp1.ViewModels
             CreateWork = new CommandVM(() => {
                 currentPageControl.SetPage(new EditWorkPage(new EditWorkVM(currentPageControl)));
             });
+            
             ViewWork = new CommandVM(() => {
                 currentPageControl.SetPage(new ViewWorksVM());
             });
-            CreateAcademic_plan = new CommandVM(() => {
-                currentPageControl.SetPage(new EditAcademic_planPage(new EditAcademic_planVM(currentPageControl)));
-            });
-            ViewAcademic_plan = new CommandVM(() => {
-                currentPageControl.SetPage(new ViewAcademic_plansVM());
-            });
-
+            
             Connection = new CommandVM(() => {
                 currentPageControl.SetPage(new Option(currentPageControl));
             });

@@ -9,38 +9,48 @@ using WpfApp1.Tools;
 
 namespace WpfApp1.ViewModels
 {
-    public class EditWorkVM
+    public class EditWorkVM : BaseVM
     {
+       
+            public Work EditWork { get; set; }
+            public CommandVM SaveWork { get; set; }
+            
 
-        public Work EditWork { get; set; }
-        public CommandVM SaveAcademic_plan { get; set; }
+        public Discipline DisciplineAcademic_plan
+        {
+            get => disciplineAcademic_plan;
+            set
+            {
+                disciplineAcademic_plan = value;
+                Signal();
+            }
+        }
+
+        public List<Discipline> Disciplines { get; set; }
+        private Discipline disciplineAcademic_plan;
+
+        public CommandVM Work { get; private set; }
 
         private CurrentPageControl currentPageControl;
-        public EditWorkVM(CurrentPageControl currentPageControl)
-        {
-            this.currentPageControl = currentPageControl;
-            EditWork = new Work();
-            InitCommand();
-        }
-        public EditWorkVM(Work editWork, CurrentPageControl currentPageControl)
-        {
-            this.currentPageControl = currentPageControl;
-            EditWork = editWork;
-            InitCommand();
-        }
-
-        private void InitCommand()
-        {
-            SaveAcademic_plan = new CommandVM(() =>
+            public EditWorkVM(CurrentPageControl currentPageControl)
             {
-                var model = SqlModel.GetInstance();
-                if (EditWork.ID == 0)
-                    model.Insert(EditWork);
-                else
-                    model.Update(EditWork);
-                currentPageControl.Back();
-            });
-        }
-
-    }
+                this.currentPageControl = currentPageControl;
+                EditWork = new Work();
+                InitCommand();
+            }
+         
+            
+            private void InitCommand()
+            {
+            Work = new CommandVM(() => {
+                    var model = SqlModel.GetInstance();
+                    if (EditWork.ID == 0)
+                        model.Insert(EditWork);
+                    else
+                        model.Update(EditWork);
+                    currentPageControl.Back();
+                });
+            }
+        
 }
+    }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1.Tools
 {
@@ -29,6 +30,11 @@ namespace WpfApp1.Tools
             else
                 Page = null;
             PageChanged?.Invoke(this, new EventArgs());
+        }
+
+        internal void SetPage(ViewWorksVM viewWorksVM)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -59,7 +59,7 @@ namespace WpfApp1.Model
         {
             try
             {
-                sqlConnection.Close(); // закрытие соединения
+                sqlConnection.Close();
             }
             catch (Exception e)
             {

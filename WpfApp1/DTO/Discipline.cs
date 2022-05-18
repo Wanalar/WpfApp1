@@ -13,6 +13,6 @@ namespace WpfApp1.DTO
         [Column("Title")]
         public string Title { get; set; } 
 
-
+        
     }
 }
