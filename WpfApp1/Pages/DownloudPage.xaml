@@ -15,12 +15,12 @@
                 <ImageBrush ImageSource="/Pages/free-png.ru-48-450x450.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Center" Margin="0,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="114" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Загрузка "/></TextBlock>
         <ComboBox HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Width="179" Height="34"
                   ItemsSource="{Binding Groups}"
                   SelectedItem="{Binding StudentGroup}"/>
-        <TextBlock HorizontalAlignment="Left" Margin="300,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="206" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Выбрать работу "/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="306" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Прописать путь к файлу "/><Run Text=" "/></TextBlock>
+        <Label Content="Прописать путь к файлу" HorizontalAlignment="Left" Margin="244,64,0,0" VerticalAlignment="Top" Width="318" FontSize="22" FontFamily="Segoe UI Black"/>
+        <Label Content="Выбрать работу" HorizontalAlignment="Left" Margin="314,146,0,0" VerticalAlignment="Top" Height="40" Width="179" FontSize="22" FontFamily="Segoe UI Black"/>
+        <Label Content="Загрузка" HorizontalAlignment="Left" Margin="314,236,0,0" VerticalAlignment="Top" Height="40" Width="179" FontSize="22" FontFamily="Segoe UI Black"/>
     </Grid>
 
 </Page>
