@@ -19,7 +19,7 @@
                   SelectedItem="{Binding DisciplineAcademic_plan}"
                   DisplayMemberPath="Title"/>
             <Label Content="Оценка "/>
-            <TextBox Text="{Binding Grade}" TextChanged="TextBox_TextChanged"/>
+           
 
             <Label Content="Дипломный или курсовой проект "/>
             <ComboBox Text="{Binding Diploma_or_Coursework }">

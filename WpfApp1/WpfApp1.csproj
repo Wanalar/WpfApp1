@@ -136,9 +136,11 @@
     <Compile Include="Tools\CurrentPageControl.cs" />
     <Compile Include="Tools\CommandVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModels\DownloudVM.cs" />
     <Compile Include="ViewModels\EditWorkVM.cs" />
     <Compile Include="ViewModels\MainVM.cs" />
     <Compile Include="ViewModels\SettingVM.cs" />
+    <Compile Include="ViewModels\UploudVM.cs" />
     <Compile Include="ViewModels\ViewWorksVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -16,7 +16,9 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Center" Margin="0,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="114" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Загрузка "/></TextBlock>
-        <ComboBox HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Width="179" Height="34" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Width="179" Height="34"
+                  ItemsSource="{Binding Groups}"
+                  SelectedItem="{Binding StudentGroup}"/>
         <TextBlock HorizontalAlignment="Left" Margin="300,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="206" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Выбрать работу "/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="306" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Прописать путь к файлу "/><Run Text=" "/></TextBlock>
     </Grid>

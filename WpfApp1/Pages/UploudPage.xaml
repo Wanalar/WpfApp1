@@ -10,13 +10,15 @@
 
     <Grid Background="White">
 
-        <Button Content="B" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Height="123" Width="231" Click="Button_Click">
+        <Button Content="B" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Height="123" Width="231" Command="{Binding Uploud}">
             <Button.Background>
                 <ImageBrush ImageSource="/Pages/kisspng-computer-icons-download-desktop-wallpaper-upload-icon-5b45d89c8a50a5.9742876215313040925666.png"/>
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Center" Margin="0,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="114" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Выгрузка"/></TextBlock>
-        <ComboBox HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Width="179" Height="34" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Width="179" Height="34"
+                  ItemsSource="{Binding Groups}"
+                  SelectedItem="{Binding StudentGroup}"/>
         <TextBlock HorizontalAlignment="Left" Margin="300,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="206" FontSize="22" FontFamily="Arial Black"><Run Language="ru-ru" Text="Выбрать работу "/></TextBlock>
     </Grid>
 </Page>

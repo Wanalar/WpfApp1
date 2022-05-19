@@ -24,10 +24,5 @@ namespace WpfApp1.Pages
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
